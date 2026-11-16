@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070916" />
+  <meta name="description" content="أساطير لايف — لعبة جرأة أو صراحة أونلاين مع أصدقائك، صوت ودردشة وغرف خاصة." />
+  <title>أساطير لايف | لعبة الجرأة والصراحة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="scene-background" aria-hidden="true"><div class="glow glow-one"></div><div class="glow glow-two"></div><div class="starfield"></div><div class="grid-floor"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <section id="entry" class="entry-screen">
+    <header class="site-header container">
+      <div class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 44 44" width="35" height="35"><path d="M22 2L27 16L42 22L27 27L22 42L17 27L2 22L17 16Z" fill="currentColor"/><path d="M32 2L34 8L40 10L34 12L32 18L30 12L24 10L30 8Z" fill="#78F1DE"/></svg></div>
+        <div><div class="brand-title">أساطير <span>لايف</span></div><div class="brand-sub">LEGENDS ARENA</div></div>
+      </div>
+      <div class="header-live"><span class="live-dot"></span> تجربة جماعية مباشرة</div>
+    </header>
+
+    <main class="entry-grid container">
+      <div class="intro">
+        <div class="eyebrow"><span class="diamond">✦</span> المباراة تبدأ من هنا <span class="eyebrow-line"></span></div>
+        <h1>الليلة...<br><span class="gradient-phrase">الأسرار تتكلّم.</span></h1>
+        <p>افتح غرفة خاصة، اجمع أصحابك من جوالاتهم، وخلي الساحة تحكم بينكم. جرأة؟ صراحة؟ القرار بيدك!</p>
+        <div class="intro-features">
+          <div class="feature"><span class="feature-icon">✧</span><span>غرف برمز سري</span></div>
+          <div class="feature"><span class="feature-icon">♫</span><span>مايك مباشر</span></div>
+          <div class="feature"><span class="feature-icon">✉</span><span>شات جماعي</span></div>
+        </div>
+        <div class="intro-badges"><span class="intro-badge">⚡ إيقاع حيّ</span><span class="intro-badge">✦ كشف سينمائي</span><span class="intro-badge">♜ تحديات بين الأصدقاء</span></div>
+        <div class="decor-orbit" aria-hidden="true"><div class="decor-orbit-inner"></div><span>✦</span></div>
+      </div>
+      <div class="gateway-wrap">
+        <div class="gateway-top"><span class="small-glow"></span> YOUR PORTAL <span class="top-line"></span> 01 / 03</div>
+        <section class="gateway-card">
+          <div class="card-header-icon">✦</div>
+          <h2>ادخل إلى الساحة</h2>
+          <p class="card-sub">اختر اسمك واستعد لمباراة ما بتنتسى</p>
+          <div class="avatar-group-label">شخصيتك في اللعبة</div>
+          <div id="avatarPicker" class="avatar-picker" aria-label="اختر شخصيتك"></div>
+          <label class="field-label" for="playerName">اسمك المستعار</label>
+          <div class="input-wrap"><span class="input-glyph">✎</span><input id="playerName" type="text" placeholder="مثلاً: فارس الليل" maxlength="22" autocomplete="nickname"></div>
+          <div class="tabs" role="tablist" aria-label="نوع الدخول"><button id="createTab" class="tab active" type="button" role="tab" aria-selected="true">✦ إنشاء غرفة</button><button id="joinTab" class="tab" type="button" role="tab" aria-selected="false">↗ دخول برمز</button></div>
+          <div id="joinCodeWrap" class="join-code-wrap hidden"><label class="field-label" for="roomCodeInput">رمز الغرفة (٦ أحرف)</label><input id="roomCodeInput" class="room-input" type="text" placeholder="A B C 2 K 7" maxlength="6" dir="ltr" inputmode="text" autocapitalize="characters" autocomplete="off"></div>
+          <button id="enterBtn" class="cta" type="button"><span id="enterText">إنشاء الغرفة الآن</span><span class="cta-arrow">↖</span></button>
+          <p class="entry-note">🛡️ لا تحتاج تسجيل حساب — العب براحتك</p>
+        </section>
+        <div class="gateway-bottom"><span>SECURE PRIVATE ROOMS</span><span>✦</span><span>PLAY TOGETHER</span></div>
+      </div>
+    </main>
+    <footer class="site-footer container">LEGENDS LIVE <span>✦</span> صُنعت للأصدقاء والضحكات</footer>
+  </section>
+
+  <section id="game" class="game-screen hidden">
+    <header class="game-header">
+      <div class="brand game-brand"><div class="brand-mark small"><svg viewBox="0 0 44 44" width="29" height="29"><path d="M22 2L27 16L42 22L27 27L22 42L17 27L2 22L17 16Z" fill="currentColor"/></svg></div><div><div class="brand-title">أساطير <span>لايف</span></div><div class="brand-sub">LEGENDS ARENA</div></div></div>
+      <div class="room-topline"><div class="connected-pill"><span class="live-dot"></span> <span id="connectionLabel">متصل</span></div><button id="copyRoomBtn" class="room-tag" title="نسخ رابط الغرفة"><span>كود الغرفة</span><strong id="roomCodeLabel" dir="ltr">------</strong><span class="room-copy">▢</span></button></div>
+      <div class="top-actions"><button id="speakerBtn" class="icon-btn" type="button" title="كتم صوت الآخرين" aria-label="كتم صوت الآخرين">🔊</button><button id="micBtn" class="mic-btn" type="button" aria-label="تفعيل المايك"><span id="micIcon">🎙</span><span id="micLabel">تشغيل المايك</span></button><button id="chatToggle" class="icon-btn mobile-chat-btn" type="button" aria-label="فتح الشات">💬<span id="unreadBadge" class="unread-badge hidden">0</span></button></div>
+    </header>
+
+    <main class="game-workspace">
+      <div class="arena-content">
+        <div class="arena-top"><div><div class="arena-kicker"><span>✦</span> LIVE MATCH ROOM <span class="small-stroke"></span></div><h2 id="arenaTitle">ساحة الأبطال</h2></div><div id="roundIndicator" class="round-pill">مرحلة الانتظار</div></div>
+        <div id="stage" class="arena-stage"><!-- dynamic scene --></div>
+        <div class="roster-heading"><div><span>✧</span> اللاعبون في الساحة <small id="playerCount">0 / 10</small></div><div class="roster-actions"><button id="endMatchBtn" type="button" class="text-link finish-link hidden">إنهاء المباراة</button><button id="shareBtn" type="button" class="text-link">↗ دعوة الأصدقاء</button></div></div>
+        <div id="roster" class="roster"></div>
+        <div class="bottom-tips"><span>✦</span> الاحترام والمرح أولاً — تجنّبوا الأسئلة المحرجة أو التحديات المؤذية <span>✦</span></div>
+      </div>
+      <aside id="chatPanel" class="chat-panel" aria-label="المحادثة الجماعية">
+        <div class="chat-head"><div><div class="chat-title"><span class="chat-orb">●</span> شات الساحة</div><div class="chat-sub">دردش مع كل الموجودين</div></div><button id="closeChat" type="button" class="chat-close" aria-label="إغلاق الشات">✕</button></div>
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        <div class="chat-foot"><div class="chat-emoji-row"><button type="button" data-emoji="🔥">🔥</button><button type="button" data-emoji="😂">😂</button><button type="button" data-emoji="👏">👏</button><button type="button" data-emoji="😱">😱</button><span>تفاعل سريع</span></div><form id="chatForm" class="chat-input-area"><input id="chatInput" type="text" autocomplete="off" maxlength="300" placeholder="اكتب رسالة للأبطال..." aria-label="اكتب رسالة"><button type="submit" aria-label="إرسال الرسالة">➜</button></form></div>
+      </aside>
+    </main>
+    <div id="chatBackdrop" class="chat-backdrop hidden"></div>
+  </section>
+
+  <div id="turnIntro" class="turn-intro hidden" aria-live="polite"><div class="turn-intro-content"><div class="turn-intro-star">✦</div><div class="turn-intro-kicker">THE NEXT LEGEND</div><div id="turnIntroName" class="turn-intro-name">دورك الآن</div><div class="turn-intro-question">جرأة <span>أم</span> صراحة؟</div></div></div>
+
+  <div id="judgeOverlay" class="cinema-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="judgeHeading">
+    <div class="cinema-noise"></div><div class="judge-view"><div class="judge-spotlight">✦ أنتَ الحكم الآن ✦</div><div class="black-diamond">◆</div><div class="overlay-kicker">اللحظة الحاسمة</div><h2 id="judgeHeading">اكتب حكمك السرّي</h2><p id="judgeDescription">الجميع ينتظر قرارك. لن يرى أحد ما تكتبه حتى تضغط كشف الحكم.</p><div class="judge-editor"><div class="judge-editor-top"><span id="judgeCategory">⚡ تحدي جرأة</span><span id="judgeCounter" dir="ltr">0 / 220</span></div><textarea id="rulingInput" maxlength="220" placeholder="اكتب السؤال أو التحدّي هنا..." rows="4"></textarea></div><button id="submitRuling" class="cinema-cta" type="button">✦ اكشف الحكم للجميع <span>↗</span></button><div class="judge-disclaimer">جميع الأسئلة والتحدّيات يجب أن تكون آمنة ومحترمة.</div></div>
+  </div>
+
+  <div id="revealOverlay" class="cinema-overlay reveal-screen hidden" role="dialog" aria-modal="true" aria-labelledby="revealHeading">
+    <div class="cinema-noise"></div><div id="revealContent" class="reveal-content hidden"><div class="reveal-emblem"><span>✦</span></div><div class="reveal-small">THE VERDICT IS IN</div><div class="reveal-category" id="revealCategory">⚡ جرأة</div><h2 id="revealHeading">صَدَرَ الحُكم!</h2><div class="verdict-card"><div id="revealTarget" class="verdict-target"></div><div id="revealText" class="verdict-text"></div><div id="revealJudge" class="verdict-judge"></div></div><p id="resultNote" class="result-note">بعد تنفيذ الحكم، اضغط الزر المناسب لإكمال المباراة.</p><div id="revealActions" class="reveal-actions hidden"><button id="doneBtn" class="done-btn" type="button">✓ تم التنفيذ <span>+10 نقاط</span></button><button id="skipBtn" class="skip-btn" type="button">تخطي الدور ↗</button></div><div id="revealWaiting" class="reveal-waiting">بانتظار اللاعب لتنفيذ الحكم...</div></div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
